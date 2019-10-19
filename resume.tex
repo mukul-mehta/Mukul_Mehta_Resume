@@ -1,0 +1,229 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Deedy - One Page Two Column Resume
+% LaTeX Template
+% Version 1.2 (16/9/2014)
+%
+% Original author:
+% Debarghya Das (http://debarghyadas.com)
+%
+% Original repository:
+% https://github.com/deedydas/Deedy-Resume
+%
+% IMPORTANT: THIS TEMPLATE NEEDS TO BE COMPILED WITH XeLaTeX
+%
+% This template uses several fonts not included with Windows/Linux by
+% default. If you get compilation errors saying a font is missing, find the line
+% on which the font is used and either change it to a font included with your
+% operating system or comment the line out to use the default font.
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% TODO:
+% 1. Integrate biber/bibtex for article citation under publications.
+% 2. Figure out a smoother way for the document to flow onto the next page.
+% 3. Add styling information for a "Projects/Hacks" section.
+% 4. Add location/address information
+% 5. Merge OpenFont and MacFonts as a single sty with options.
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% CHANGELOG:
+% v1.1:
+% 1. Fixed several compilation bugs with \renewcommand
+% 2. Got Open-source fonts (Windows/Linux support)
+% 3. Added Last Updated
+% 4. Move Title styling into .sty
+% 5. Commented .sty file.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Known Issues:
+% 1. Overflows onto second page if any column's contents are more than the
+% vertical limit
+% 2. Hacky space on the first bullet point on the second column.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[]{deedy-resume-openfont}
+\documentclass[10pt]{report}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\fontspec{[fontawesome-webfont.ttf]}
+\usepackage{fontawesome}
+\pagestyle{fancy}
+\fancyhf{}
+ 
+\begin{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     TITLE NAME
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\namesection{Mukul}{Mehta}{
+Sophomore @ Computer Science and Enginnering, IIT Kharagpur}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     COLUMN ONE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{minipage}[t]{0.33\textwidth} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     EDUCATION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Education} 
+
+\subsection{Indian Institute of \\ Technology Kharagpur}
+\descript{B.Tech in Computer \\ Science and Engineering \\ CGPA: 9.11/10}
+\location{2018-2022 | West Bengal, India}
+\sectionsep
+
+\subsection{Central Board of \\ Secondary Education}
+\descript{Higher Secondary School \\ Certificate Examination}
+\location{ Percentage: 94.8\%}
+\location{May 2018 | New Delhi, India}
+\sectionsep
+
+\subsection{Central Board of \\ Secondary Education}
+\descript{Secondary School \\ Certificate Examination}
+\location{CGPA: 10/10}
+\location{May 2016 | Hyderabad, India}
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     CONTACT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{CONTACT} 
+\descript{RK Hall, \\ IIT Kharagpur,\\ West Bengal - 721302 \\ Phone: +91-76783 81645}
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     LINKS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{LINKS} 
+\faEnvelope\ {\href{mailto:mukul.csiitkgp@gmail.com}{ mukul.csiitkgp@gmail.com}}\\
+\faGlobe\ {\href{https://mukul-mehta.github.io/}{ mukul-mehta.github.io}}\\
+\faGithub\ {\href{https://github.com/mukul-mehta}{ mukul-mehta}}\\
+\faLinkedinSquare\ {\href{https://www.linkedin.com/in/mukul-mehta12}{ mukul-mehta12}}\\
+\faFacebookSquare\ {\href{https://www.facebook.com/mukul.amehta}{ mukul.amehta}} \\
+
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     COURSEWORK
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Coursework}
+\emph{T - Theory | L - Laboratory}\\
+\descript{Completed}
+Programming \& Data Structures (T/L)\\~\\
+\descript{Ongoing}
+Discrete Structures (T)\\
+Algorithms-1 (T/L) \\~\\
+\descript{Online Courses}
+\href{https://www.coursera.org/learn/machine-learning}{Machine Learning - Andrew Ng}\\
+\href{https://online.codingblocks.com/courses/40}{ML - Coding Blocks (Ongoing)}\\
+\href{https://courses.edx.org/courses/course-v1:CaltechX+Ec1011x+1T2018/course/}{Economics \& Calculus - edX (Ongoing)}
+
+\sectionsep
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     COLUMN TWO
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{minipage} 
+\hfill
+\begin{minipage}[t]{0.66\textwidth} 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     PROJECTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{PROJECTS}
+
+\runsubsection{\href{https://github.com/iit-technology-ambit/Syphus}{IIT Technology Ambit}}
+\descript{Backend Developer}
+\location{Jun 2019 – Present }
+\vspace{\topsep} % Hacky fix for awkward extra vertical space
+\begin{tightemize}
+\item IIT Technology Ambit is a tech magazine that covers innovation in tech across the IIT's, funded by the Dean, Sponsored Research and Industrial Consultancy, IIT Kharagpur.  
+\item Part of a team building a REST based backend from scratch. I worked on writing DB Models, API Endpoints and unit tests.
+\item The REST Structure was built using Flask-RESTPlus and used other frameworks such as Flask-Login and Sendgrid API for mailing.
+\end{tightemize}
+\sectionsep
+
+\runsubsection{\href{http://lidrekgp.herokuapp.com/}{LIDRE}}
+\descript{Library Dues Notifier}
+\begin{tightemize}
+\item A service to notify dues in the library and send reminders by scraping the  {\href{http://www.library.iitkgp.ac.in/opac/myaccount/myAccount.html}{library website}} using Python-Selenium.
+\item Set up a cron job to fetch details from Google forms, parse the results and send a mail depending on when books are due. The mail is sent using Sendgrid API for Python.
+\end{tightemize}
+\sectionsep
+
+\runsubsection{Path Planning and Kalman Filter}
+\descript{AGV Task Round}
+\begin{tightemize}
+\item Optimized multiple data structures and pathfinding algorithms(Dijkstra and A*) to find a solution for a given maze, with multiple constraints towards emulating a real car. Implemented in C++ using OpenCV.
+\item Implemented Kalman Filter for estimation and verification of uncertain observations by using Numpy, Matplotlib and OpenCV.
+
+\end{tightemize}
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   SKILLS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Technical Skills}
+\begin{tabular}{r|p{15cm}}
+\textsc{Programming Languages} & \textbf{ C | C++ | Python | JavaScript | GNU Octave} \\
+\textsc{Libraries / Frameworks} & \textbf{Flask | Selenium | OpenCV | Numpy | sklearn | Snap.py }\\
+\textsc{Databases} & \textbf{SQLAlchemy | MySQL | SQLite}\\
+\textsc{Systems / Platforms} & \textbf{Git | Linux | Docker | Heroku | Nginx}\\ 
+\textsc{Web Technolgies} & \textbf{HTML | CSS | Bootstrap | REST | BeautifulSoup
+} \\
+\end{tabular}
+%----------------------------------------------------------------------------------------
+%	Scholastic Achievements
+%----------------------------------------------------------------------------------------
+
+\section{SCHOLASTIC ACHIEVEMENTS}
+
+\vspace{\topsep} % Hacky fix for awkward extra vertical space
+\begin{tightemize}
+
+\item {\emph{Aditya Birla Scholarship}:} Among the top 35 students in the country and the 4 from IIT KGP to be nominated for the interviews in 2018.\\
+\item{JEE Advanced \emph{AIR 215}:} Under top 0.15\% amongst more than 2,00,000 students \\
+\item {JEE Main \emph{AIR 1584}:} In top 0.15\% amongst more than 12,00,000 students. \\
+\end{tightemize}
+\sectionsep
+
+%	Activities and Leadership
+%----------------------------------------------------------------------------------------
+
+\section{Activities \& Leadership}
+
+\vspace{\topsep} % Hacky fix for awkward extra vertical space
+\begin{tightemize}
+
+
+\item {\emph{Core Team Member, Kharagpur Open Source Society}:} Responsible for the smooth conduct of events to familiarize students with open source technologies and philosophy.\\
+\item{\emph{Open Source Involvement:}} Part of gold-winning OpenSoft team in my hall (Litigator). Worked on multiple projects, hosted on GitHub profile. \\
+\item{\emph{Tech Team, Gymkhana IIT Kharagpur}} Part of a team that is the highest nominated technical position in the institute responsible for maintaining backend, student's grievance portal etc.
+
+\end{tightemize}
+\sectionsep
+
+\end{minipage} 
+\end{document}  \documentclass[]{article}\
